@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Date from '../components/date'
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   return (
     <Layout home>
 
