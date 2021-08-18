@@ -9,7 +9,7 @@ export const siteTitle = 'Sample Website'
 export default function Layout({ children, home }) {
   return (
 
-    <div>
+    <div className="font-custom">
       <Navbar/>
       {home ? (
         <>

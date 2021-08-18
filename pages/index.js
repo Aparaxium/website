@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Date from '../components/date'
 import Imagecard from '../components/imagecard_new'
+import Textcard from '../components/textcard'
 
 export default function Home() {
   return (
@@ -48,12 +49,16 @@ export default function Home() {
         </div>
       </div>
       <ul className="grid sm:grid-cols-1 md:grid-cols-2 container mx-auto">
-    
-      <Imagecard name="wip" image="/images/carousel2.jpg"/>
-      <Imagecard name="wip" image="/images/carousel3.jpg"/>
-      <Imagecard name="wip" image="/images/carousel4.jpg"/>
-      <Imagecard name="wip" image="/images/carousel5.jpg"/>
 
+        <Imagecard name="wip" image="/images/carousel2.jpg" />
+        <Imagecard name="wip" image="/images/carousel3.jpg" />
+        <Imagecard name="wip" image="/images/carousel4.jpg" />
+        <Imagecard name="wip" image="/images/carousel5.jpg" />
+
+      </ul>
+
+      <ul className="container mx-auto">
+        <Textcard />
       </ul>
     </Layout>
   )
