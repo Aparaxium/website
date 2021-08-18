@@ -6,7 +6,7 @@ export default function Imagecard(props) {
   return (
     <li>
       <Link href={props.name}>
-        <div className="h-full m-6 transform transition-all hover:-translate-y-4 ">
+        <div className="h-auto m-6 transform transition-all hover:-translate-y-4 ">
           <div className="h-52 w-full relative">
             <Image
               className="absolute "
