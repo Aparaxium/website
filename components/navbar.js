@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="z-50 sticky top-0 flex items-center flex-wrap bg-gray-400 p-1 border-2 rounded-lg ">
+    <nav className="z-50 sticky top-0 flex items-center flex-wrap bg-gray-400 p-1">
       <Link href="/">
         <a className="inline-flex items-center p-1 hover:bg-gray-500 ">
           <svg

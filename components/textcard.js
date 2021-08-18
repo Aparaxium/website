@@ -5,10 +5,10 @@ export default function Textcard(props) {
   //console.log(props)
   return (
     <li>
-      <div className="h-80 bg-gray-200 border-8 ">
+      <div className="m-6 bg-gray-200">
         <div className="h-2/6">
           <div className="justify-center flex pt-6">
-            <p className="text-4xl font-bold">Insert text.</p>
+            <p className="text-4xl font-bold">Lorem ipsum</p>
           </div>
           <div className="flex justify-center">
             <svg
@@ -28,7 +28,7 @@ export default function Textcard(props) {
           </div>
         </div>
         <div className=" h-4/6 p-4 m-4 justify-center flex">
-          <p className="text-gray-500">
+          <p className="text-gray-600 text-xs sm:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             sollicitudin dui accumsan sapien maximus posuere. Sed feugiat
             vehicula interdum. Donec venenatis ac neque vel pharetra. Ut laoreet

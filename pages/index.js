@@ -11,9 +11,7 @@ import Textcard from "../components/textcard";
 export default function Home() {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      {/*refactor this later*/}
       <div className="h-screen">
         <div className="h-3/4">
           <div className="h-3/4 w-full absolute">
@@ -37,12 +35,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="h-1/4">
-          <div className="h-screen relative">
-            <div className="flex justify-center h-1/4 items-center ">
-              <h4 className="text-5xl ">Insert Text</h4>
-            </div>
-          </div>
+        <div className="flex justify-center h-1/4 items-center ">
+          <h4 className="text-5xl ">Lorem ipsum</h4>
         </div>
       </div>
       <ul className="grid sm:grid-cols-1 md:grid-cols-2 container mx-auto">
@@ -53,6 +47,19 @@ export default function Home() {
       </ul>
 
       <ul className="container mx-auto">
+        <Textcard />
+        <Textcard />
+      </ul>
+
+      <ul className="grid sm:grid-cols-1 md:grid-cols-4 container mx-auto">
+        <Textcard />
+        <Textcard />
+        <Textcard />
+        <Textcard />
+      </ul>
+
+      <ul className="grid sm:grid-cols-1 md:grid-cols-2 container mx-auto">
+        <Imagecard name="wip" image="/images/carousel2.jpg" />
         <Textcard />
       </ul>
     </Layout>
