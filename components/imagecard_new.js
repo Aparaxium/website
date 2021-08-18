@@ -19,7 +19,7 @@ export default function Imagecard(props) {
 
                         </div>
                     </div>
-                    <div className=" h-1/3 bg-gray-300 p-4">
+                    <div className=" h-1/3 bg-gray-200 p-4">
                         <p>Insert text.</p>
                     </div>
 

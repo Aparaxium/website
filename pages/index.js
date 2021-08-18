@@ -1,22 +1,20 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
 //import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Image from 'next/image'
-import Link from 'next/link'
-import Date from '../components/date'
-import Imagecard from '../components/imagecard_new'
-import Textcard from '../components/textcard'
+import { getSortedPostsData } from "../lib/posts";
+import Image from "next/image";
+import Link from "next/link";
+import Date from "../components/date";
+import Imagecard from "../components/imagecard_new";
+import Textcard from "../components/textcard";
 
 export default function Home() {
   return (
     <Layout home>
-
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <div className="h-screen">
-
         <div className="h-3/4">
           <div className="h-3/4 w-full absolute">
             <Image
@@ -37,7 +35,6 @@ export default function Home() {
               <h1 className="text-white text-8xl">Design</h1>
             </div>
           </div>
-
         </div>
 
         <div className="h-1/4">
@@ -49,26 +46,24 @@ export default function Home() {
         </div>
       </div>
       <ul className="grid sm:grid-cols-1 md:grid-cols-2 container mx-auto">
-
         <Imagecard name="wip" image="/images/carousel2.jpg" />
         <Imagecard name="wip" image="/images/carousel3.jpg" />
         <Imagecard name="wip" image="/images/carousel4.jpg" />
         <Imagecard name="wip" image="/images/carousel5.jpg" />
-
       </ul>
 
       <ul className="container mx-auto">
         <Textcard />
       </ul>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
+      allPostsData,
+    },
+  };
 }
