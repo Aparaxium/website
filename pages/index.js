@@ -7,6 +7,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import Imagecard from "../components/imagecard_new";
 import Textcard from "../components/textcard";
+import Contact from "../components/contact";
 
 export default function Home() {
   return (
@@ -62,6 +63,9 @@ export default function Home() {
         <Imagecard name="wip" image="/images/carousel2.jpg" />
         <Textcard />
       </ul>
+      <div className="container mx-auto">
+        <Contact />
+      </div>
     </Layout>
   );
 }
