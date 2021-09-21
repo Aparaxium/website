@@ -5,21 +5,41 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "date-fns": "^2.23.0",
+    "@tabler/icons": "^1.41.2",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "next": "^11.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next-themes": "^0.0.15",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-markdown": "^7.0.1",
+    "react-syntax-highlighter": "^15.4.4",
     "remark": "^13.0.0",
-    "remark-html": "^13.0.0",
+    "remark-gfm": "^2.0.0",
     "remove": "^0.1.5"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.3",
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.20",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "^10.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-react": "^7.25.2",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.7",
+    "typescript": "^4.4.3"
   }
 }
