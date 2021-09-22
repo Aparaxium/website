@@ -8,9 +8,8 @@ export default function ThemeToggle(): ReactElement {
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
-  if (!mounted) return <></>;
 
-  return theme === "dark" ? (
+  return theme === "dark" && mounted ? (
     <IconSun onClick={() => setTheme(theme === "dark" ? "light" : "dark")} />
   ) : (
     <IconMoon onClick={() => setTheme(theme === "dark" ? "light" : "dark")} />

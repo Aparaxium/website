@@ -1,9 +1,9 @@
 import {
   IconBrandFacebook,
-  IconBrandTwitter,
-  IconBrandInstagram,
   IconBrandGithub,
+  IconBrandInstagram,
   IconBrandLinkedin,
+  IconBrandTwitter,
   IconBrandYoutube,
 } from "@tabler/icons";
 import { ReactElement } from "react";
