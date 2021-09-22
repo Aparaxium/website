@@ -61,9 +61,7 @@ module.exports = {
           },
         },
       }),
-      fontFamily: {
-        custom: ["'Open Sans', sans-serif", ...defaultTheme.fontFamily.sans],
-      },
+      fontFamily: {},
     },
   },
   variants: {

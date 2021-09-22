@@ -10,7 +10,7 @@ type Props = {
 //TODO move css to _document to improve performance? (why?)
 export default function Layout({ children }: Props): ReactElement {
   return (
-    <div className="font-custom dark:bg-bgray-900 dark:text-gray-100">
+    <div>
       <Navbar sticky={false} />
       <main>{children}</main>
       <Footer />
