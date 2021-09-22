@@ -1,17 +1,13 @@
+import Markdown from "markdown-to-jsx";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useTheme } from "next-themes";
 import path from "path";
 import { ReactElement, useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   vs,
   vscDarkPlus,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
-import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
-
-import remarkGfm from "remark-gfm";
 
 import { POSTS_DIRECTORY } from "../../lib/constants";
 import { getFileNames, getPost, Post } from "../../lib/projects";
@@ -25,9 +21,6 @@ type Props = {
 };
 
 export default function Project({ post }: Props): ReactElement {
-  SyntaxHighlighter.registerLanguage("jsx", jsx);
-  SyntaxHighlighter.registerLanguage("python", python);
-
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -42,28 +35,28 @@ export default function Project({ post }: Props): ReactElement {
         {post.data.title}
       </h1>
       <div className="flex-col mx-auto prose dark:prose-dark">
-        <ReactMarkdown
-          rehypePlugins={[remarkGfm]}
-          components={{
-            //Will inline ever be used?
-            code({ className, children }) {
-              const match = /language-(\w+)/.exec(className || "");
-              return match ? (
-                <SyntaxHighlighter
-                  style={theme == "dark" ? vscDarkPlus : vs}
-                  language={match[1]}
-                  PreTag="div"
-                >
-                  {children + "".replace(/\n$/, "")}
-                </SyntaxHighlighter>
-              ) : (
-                <code className={className}>{children}</code>
-              );
+        <Markdown
+          options={{
+            overrides: {
+              code({ className, children }) {
+                const match = /lang-(\w+)/.exec(className || "");
+                return match ? (
+                  <SyntaxHighlighter
+                    style={theme == "dark" ? vscDarkPlus : vs}
+                    language={match[1]}
+                    PreTag="div"
+                  >
+                    {children + "".replace(/\n$/, "")}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className}>{children}</code>
+                );
+              },
             },
           }}
         >
           {post.content}
-        </ReactMarkdown>
+        </Markdown>
       </div>
     </div>
   );

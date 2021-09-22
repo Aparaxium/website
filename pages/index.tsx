@@ -5,7 +5,7 @@ import ImageCard from "../components/ImageCard";
 import Landing from "../components/Landing";
 import Textcard from "../components/TextCard";
 import { POSTS_DIRECTORY } from "../lib/constants";
-import { getAllPostMeta, PostData } from "../lib/projects";
+import { getAllPostMeta,PostData } from "../lib/projects";
 
 type PropsWrapper = {
   readonly props: Props;

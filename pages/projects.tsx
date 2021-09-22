@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 
 import Imagecard from "../components/ImageCard";
 import { POSTS_DIRECTORY } from "../lib/constants";
-import { getAllPostMeta, PostData } from "../lib/projects";
+import { getAllPostMeta,PostData } from "../lib/projects";
 
 type PropsWrapper = {
   readonly props: Props;
