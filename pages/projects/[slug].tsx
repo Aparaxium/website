@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import path from "path";
 import { ReactElement, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   vs,
   vscDarkPlus,
