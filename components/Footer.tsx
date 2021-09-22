@@ -1,26 +1,28 @@
-import * as Icon from "@tabler/icons";
+import {
+  IconBrandFacebook,
+  IconBrandTwitter,
+  IconBrandInstagram,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+} from "@tabler/icons";
 import { ReactElement } from "react";
 
-type IconMap = {
-  [key: string]: Icon.TablerIcon;
-};
-
 const footerLinks = [
-  { icon: "IconBrandFacebook", href: "https://www.facebook.com" },
-  { icon: "IconBrandTwitter", href: "https://www.twitter.com" },
-  { icon: "IconBrandInstagram", href: "https://www.instagram.com" },
-  { icon: "IconBrandGithub", href: "https://www.github.com" },
-  { icon: "IconBrandLinkedin", href: "https://www.linkedin.com" },
-  { icon: "IconBrandYoutube", href: "https://www.youtube.com" },
+  { icon: IconBrandFacebook, href: "https://www.facebook.com" },
+  { icon: IconBrandTwitter, href: "https://www.twitter.com" },
+  { icon: IconBrandInstagram, href: "https://www.instagram.com" },
+  { icon: IconBrandGithub, href: "https://www.github.com" },
+  { icon: IconBrandLinkedin, href: "https://www.linkedin.com" },
+  { icon: IconBrandYoutube, href: "https://www.youtube.com" },
 ];
 
 export default function Footer(): ReactElement {
   const components = footerLinks.map((site) => {
-    const iconMap = Icon as IconMap;
-    const DynamicIcon: Icon.TablerIcon = iconMap[site.icon];
+    const IconComponent = site.icon;
     return (
       <a key={site.href} href={site.href}>
-        <DynamicIcon></DynamicIcon>
+        <IconComponent />
       </a>
     );
   });
