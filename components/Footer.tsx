@@ -1,6 +1,9 @@
-import { TablerIconProps } from "@tabler/icons";
-import dynamic, { DynamicOptions } from "next/dynamic";
+import * as Icon from "@tabler/icons";
 import { ReactElement } from "react";
+
+type IconMap = {
+  [key: string]: Icon.TablerIcon;
+};
 
 const footerLinks = [
   { icon: "IconBrandFacebook", href: "https://www.facebook.com" },
@@ -11,21 +14,16 @@ const footerLinks = [
   { icon: "IconBrandYoutube", href: "https://www.youtube.com" },
 ];
 
-//TODO implement suspense when react 18 is released?
 export default function Footer(): ReactElement {
   const components = footerLinks.map((site) => {
-    const importdata = () =>
-      import("@tabler/icons").then((module) => module[site.icon]);
-    const DynamicComponent = dynamic(
-      importdata as DynamicOptions<TablerIconProps>
-    );
+    const iconMap = Icon as IconMap;
+    const DynamicIcon: Icon.TablerIcon = iconMap[site.icon];
     return (
       <a key={site.href} href={site.href}>
-        <DynamicComponent />
+        <DynamicIcon></DynamicIcon>
       </a>
     );
   });
-
   return (
     <footer>
       <div className="z-50 flex items-center justify-center space-x-8 h-14 ">
