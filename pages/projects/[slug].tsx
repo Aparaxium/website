@@ -3,11 +3,14 @@ import { useTheme } from "next-themes";
 import path from "path";
 import { ReactElement, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   vs,
   vscDarkPlus,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
+import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
+
 import remarkGfm from "remark-gfm";
 
 import { POSTS_DIRECTORY } from "../../lib/constants";
@@ -22,6 +25,9 @@ type Props = {
 };
 
 export default function Project({ post }: Props): ReactElement {
+  SyntaxHighlighter.registerLanguage("jsx", jsx);
+  SyntaxHighlighter.registerLanguage("python", python);
+
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
