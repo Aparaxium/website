@@ -7,12 +7,6 @@ type Props = {
   readonly sticky?: boolean;
 };
 
-/* not neccessary due to undefined and null being falsey, but is semantically useful
-Navbar.defaultProps = {
-  sticky: false,
-};
-*/
-
 const headerNavLinks = [
   { href: "/", title: "Home" },
   { href: "/projects", title: "Projects" },
@@ -59,13 +53,13 @@ export default function NavBar({ sticky }: Props): ReactElement {
           active ? "" : "hidden"
         } w-full lg:inline-flex lg:flex-grow lg:w-auto`}
       >
-        <div className="flex flex-col w-full lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto">
-          <ThemeToggle />
+        <div className="flex flex-col w-full items-end lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto lg:items-center lg:h-auto">
+          <div className="py-2 mx-3">
+            <ThemeToggle />
+          </div>
           {headerNavLinks.map((link) => (
             <Link href={link.href} key={link.href}>
-              <a className="items-center justify-center py-2 mx-3 font-bold">
-                {link.title}
-              </a>
+              <a className="py-2 mx-3 font-bold">{link.title}</a>
             </Link>
           ))}
         </div>

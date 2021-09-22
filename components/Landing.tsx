@@ -7,7 +7,7 @@ type Props = {
 
 export default function Landing({ quality = 75 }: Props): ReactElement {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen pointer-events-none">
       <div className="relative w-full h-3/4">
         <Image
           priority={true}

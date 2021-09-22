@@ -18,7 +18,7 @@ type Props = {
 export default function Home({ post }: Props): ReactElement {
   return (
     <>
-      <Landing />
+      <Landing quality={35} />
       <div className="container grid mx-auto sm:grid-cols-1 md:grid-cols-2">
         {post.map((d: PostData) => (
           <div className="m-6" key={d.title}>
@@ -27,7 +27,8 @@ export default function Home({ post }: Props): ReactElement {
               description={d.description}
               imgSrc={d.imgSrc}
               href={"/projects/" + d.slug}
-              horizontal={true}
+              row={true}
+              quality={35}
             />
           </div>
         ))}

@@ -27,6 +27,7 @@ export default function Projects({ post }: Props): ReactElement {
             description={d.description}
             imgSrc={d.imgSrc}
             href={"/projects/" + d.slug}
+            row={false}
           />
         ))}
       </div>
