@@ -65,7 +65,6 @@ export default function Project({ post }: Props): ReactElement {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getFileNames(POSTS_DIRECTORY);
-  console.log("getStaticPaths", paths);
   return {
     paths,
     fallback: false,
@@ -75,7 +74,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({
   params,
 }): Promise<PropsWrapper> => {
-  console.log("getStaticProps", params);
   if (params === undefined) {
     throw new Error("Undefined static props in pages/projects/[slug].tsx");
   } else {
